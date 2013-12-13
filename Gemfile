@@ -7,6 +7,8 @@ group :assets do
 	gem 'uglifier', '>= 1.3.0'
 	gem 'coffee-rails', '~> 4.0.0'
 end
+gem 'rails_layout', :group => :development
+gem 'zurb-foundation'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'

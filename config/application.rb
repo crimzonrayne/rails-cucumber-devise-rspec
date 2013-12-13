@@ -13,6 +13,8 @@ Bundler.require(:default, Rails.env)
 
 module Rails3DeviseRspecCucumber
   class Application < Rails::Application
+    config.filter_parameters += [:password, :password_confirmation]
+
       # don't generate RSpec tests for views and helpers
     config.generators do |g|
         g.test_framework :rspec, fixture: true
