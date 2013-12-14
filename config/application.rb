@@ -15,7 +15,10 @@ module Rails3DeviseRspecCucumber
   class Application < Rails::Application
     config.filter_parameters += [:password, :password_confirmation]
 
-      # don't generate RSpec tests for views and helpers
+    # Heroku requires this to be false
+	config.assets.initialize_on_precompile=false
+
+    # don't generate RSpec tests for views and helpers
     config.generators do |g|
         g.test_framework :rspec, fixture: true
         g.fixture_replacement :factory_girl, dir: 'spec/factories'

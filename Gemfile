@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-
+ruby '2.0.0'
 gem 'rails', '4.0.2'
-gem 'sqlite3'
+gem 'sqlite3', :group => :development
 group :assets do
 	gem 'sass-rails', '~> 4.0.0'
 	gem 'uglifier', '>= 1.3.0'
@@ -24,3 +24,8 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "figaro", ">= 0.5.3"
 gem "better_errors", ">= 0.3.2", :group => :development
 gem "binding_of_caller", ">= 0.6.8", :group => :development
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+	gem 'thin'
+end
